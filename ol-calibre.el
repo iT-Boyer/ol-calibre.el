@@ -15,7 +15,7 @@
 
 (defun org-calibre-open (query)
   "QUERY should be a string querying in Calibre search."
-  (async-start-process "Calibre" org-calibre-command nil query))
+  (async-start-process "Calibre" org-calibre-command nil (format "calibre://search/book?q=%s" query)))
 
 (defun org-calibre-export (link description format _)
   "Export a calibre page link from Org files."
